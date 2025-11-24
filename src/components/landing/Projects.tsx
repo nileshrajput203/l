@@ -220,7 +220,7 @@ function ProjectListItem({ project, index }: { project: (typeof projects)[0]; in
                 <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                     {project.amenities.map((amenity, i) => (
                         <div key={i} className="flex items-center gap-2 text-gray-600">
-                            {React.cloneElement(amenityIcons[amenity] || <FaHome />, { className: "h-4 w-4 text-green-500 flex-shrink-0" })}
+                            {React.cloneElement(amenityIcons[amenity] || <FaHome />, { className: "h-4 w-4 text-black flex-shrink-0" })}
                             <span className="text-sm">{amenity}</span>
                         </div>
                     ))}

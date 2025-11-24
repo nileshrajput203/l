@@ -78,9 +78,17 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                 <GalleryVertical className="mr-2 h-4 w-4" /> View Gallery
               </a>
             </Button>
-            <Button variant="ghost" size="sm" disabled> 
-              <Download className="mr-2 h-4 w-4" /> Download Brochure
-            </Button>
+            {project.brochureUrl ? (
+              <Button variant="ghost" size="sm" asChild>
+                <a href={project.brochureUrl} download>
+                  <Download className="mr-2 h-4 w-4" /> Download Brochure
+                </a>
+              </Button>
+            ) : (
+              <Button variant="ghost" size="sm" disabled> 
+                <Download className="mr-2 h-4 w-4" /> Download Brochure
+              </Button>
+            )}
              <Link href="/#projects" className="ml-auto">
                 <Button variant="outline" size="sm">
                     <ArrowLeft className="h-4 w-4 mr-2" />
@@ -131,7 +139,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                 <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {(project.amenities ?? []).map((amenity) => (
                     <div key={amenity} className="flex items-center gap-3 p-3 rounded-lg bg-secondary/70">
-                        <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#1f2121] shrink-0" />
                         <span className="font-medium text-sm">{amenity}</span>
                     </div>
                 ))}

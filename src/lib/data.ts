@@ -1,4 +1,3 @@
-
 import { ShieldCheck, Trees, Landmark, Users } from "lucide-react";
 
 export const heroImages: { src: string; alt: string; aiHint: string }[] = [
@@ -30,14 +29,17 @@ export const projects = [
     type: "Residential",
     status: "Ongoing",
     area: "1,500 - 2,500 sq.ft.",
-    image: "https://i.postimg.cc/NjW3Bvgk/bldg-1-20x30.jpg",
+    image: "/image copy.png",
     aiHint: "luxury apartment",
     reraNo: "P99000067890",
     description: "Experience exquisite living at Nova Exotica. A symbol of modern architecture and luxury, offering spacious apartments with world-class amenities for a truly exotic lifestyle.",
     amenities: ["Swimming Pool", "Clubhouse", "Gymnasium", "Private Balconies"],
     gallery: [
         { src: "https://i.postimg.cc/HnYGR0pG/top-view-30x40.jpg", alt: "Top view of Nova Exotica", aiHint: "building top view" },
+        { src: "/image.png", alt: "Nova Exotica", aiHint: "modern apartment building" },
+        { src: "/image copy.png", alt: "Nova Exotica", aiHint: "modern apartment building" },
     ],
+    brochureUrl: "/2.pdf",
   },
   {
     id: 3,
@@ -52,8 +54,14 @@ export const projects = [
     description: "Shreeram Sampaada is a landmark mixed-use development offering luxurious 2 BHK residences, commercial offices, and anchor shops. Located just 5 minutes from Palghar Railway Station, it is positioned as Palghar's most iconic project, blending luxury living with prime commercial opportunities.",
     amenities: ["2-level Stack Parking", "Toddlers Play Area", "Gymnasium", "Garden Spaces", "Jogging Track", "Dedicated Commercial Entry"],
     gallery: [
-        { src: "https://i.postimg.cc/d11VKbR6/shree-Ram-sampada-3-D-Img-page-0001.jpg", alt: "Shreeram Sampaada 3D view", aiHint: "building 3d model" },
+        { src: "/0.jpg", alt: "Shreeram Sampaada front view", aiHint: "modern mixed-use building front view" },
+        { src: "/s1.jpg", alt: "Shreeram Sampaada side view", aiHint: "modern mixed-use building side view" },
+        { src: "/s2.jpg", alt: "Shreeram Sampaada back view", aiHint: "modern mixed-use building back view" },
+        { src: "/s3.jpg", alt: "Shreeram Sampaada aerial view", aiHint: "modern mixed-use building aerial view" },
+        { src: "/s4.jpg", alt: "Shreeram Sampaada close-up view", aiHint: "modern mixed-use building close-up view" },
+        { src: "/s5.jpg", alt: "Shreeram Sampaada interior view", aiHint: "modern mixed-use building interior view" },
     ],
+    brochureUrl: "/3.pdf",
   },
   {
     id: 4,
@@ -68,6 +76,10 @@ export const projects = [
     amenities: ["24/7 Security", "Loading/Unloading Docks", "Ample Parking", "Power Backup"],
     gallery: [
         { src: "https://i.postimg.cc/C1hpyb0V/Whats-App-Image-2025-08-26-at-5-25-29-PM.jpg", alt: "Shiv Aashish Industrial Estate", aiHint: "industrial building" },
+        { src: "/11.jpg", alt: "Shiv Aashish Industrial Estate f", aiHint: "industrial building f" },
+        { src: "/22.jpg", alt: "Shiv Aashish Industrial Estate b", aiHint: "industrial building b" },
+        { src: "/33.jpg", alt: "Shiv Aashish Industrial Estate c", aiHint: "industrial building c" },
+        { src: "/44.jpg", alt: "Shiv Aashish Industrial Estate d", aiHint: "industrial building d" },
     ],
   },
   {
@@ -84,7 +96,9 @@ export const projects = [
     amenities: ["Proximity to College", "Close to NH-8", "Nearby Shops & Services"],
     gallery: [
         { src: "https://i.postimg.cc/NjW3Bvgk/bldg-1-20x30.jpg", alt: "Guruji Residency", aiHint: "modern apartment building" },
+       
     ],
+    brochureUrl: "/3.pdf",
   }
 ];
 
