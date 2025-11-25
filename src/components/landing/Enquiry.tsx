@@ -155,7 +155,7 @@ export function Enquiry() {
               </div>
               <div>
                 <div className="font-semibold">Our Office</div>
-                <address className="text-muted-foreground not-italic">Navkar House, Andheri West, Mumbai, Maharashtra</address>
+                <address className="text-muted-foreground not-italic">flat no 1, a wing madhuban co-op housing society, Devisha Rd, Juna Palghar, Palghar, Maharashtra 401404</address>
               </div>
             </div>
           </div>
