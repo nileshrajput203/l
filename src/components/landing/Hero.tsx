@@ -13,7 +13,7 @@
                   alt={heroImages[0].alt}
                   data-ai-hint={heroImages[0].aiHint}
                   fill
-                  className="object-cover"
+                  className="object-cover md:object-center"
                   priority
                 />
               </div>

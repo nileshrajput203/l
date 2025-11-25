@@ -1,7 +1,11 @@
 import { ShieldCheck, Trees, Landmark, Users } from "lucide-react";
 
 export const heroImages: { src: string; alt: string; aiHint: string }[] = [
-  { src: "/banner1.jpg", alt: "Presenting Palghar\'s Most Iconic Project", aiHint: "modern building exterior" },
+  { 
+    src: "/banner1.jpg", 
+    alt: "Navkar Group - Best construction and real estate in Palghar, showcasing a modern building exterior.", 
+    aiHint: "modern building exterior" 
+  },
 ];
 
 export const projects = [
@@ -19,11 +23,11 @@ export const projects = [
     description: "Discover modern living at Navkar Heights, a residential project in Palghar. Offering thoughtfully designed 2 & 3 BHK apartments, it combines comfort with the convenience of being located near the railway station, making your daily commute effortless.",
     amenities: ["24/7 Security", "Children\'s Play Area", "Landscaped Gardens", "Power Backup"],
     gallery: [
-      { src: "https://i.postimg.cc/bNYhN3FY/Whats-App-Image-2025-08-25-at-4-55-07-PM-2.jpg", alt: "Exterior view of Navkar Heights", aiHint: "modern building exterior" },
-      { src: "https://i.postimg.cc/8z8mm0QN/Whats-App-Image-2025-08-25-at-4-55-07-PM-1.jpg", alt: "Navkar Heights building front view", aiHint: "modern building" },
-      { src: "/n1.jpg", alt: "Navkar Heights building side view", aiHint: "modern building" },
-      { src: "/n2.jpg", alt: "Navkar Heights building back view", aiHint: "modern " },
-      { src: "/n3.jpg", alt: "Navkar Heights building up view", aiHint: "modern style" },
+      { src: "https://i.postimg.cc/bNYhN3FY/Whats-App-Image-2025-08-25-at-4-55-07-PM-2.jpg", alt: "Exterior view of Navkar Heights by Navkar Group in Palghar", aiHint: "modern building exterior" },
+      { src: "https://i.postimg.cc/8z8mm0QN/Whats-App-Image-2025-08-25-at-4-55-07-PM-1.jpg", alt: "Front view of Navkar Heights, a Navkar Group construction project in Palghar", aiHint: "modern building" },
+      { src: "/n1.jpg", alt: "Side view of the Navkar Heights residential building in Palghar", aiHint: "modern building" },
+      { src: "/n2.jpg", alt: "Back view of Navkar Heights, a real estate project in Palghar", aiHint: "modern " },
+      { src: "/n3.jpg", alt: "Upward view of the Navkar Heights building by Navkar Group", aiHint: "modern style" },
     ],
   },
   {
@@ -40,9 +44,9 @@ export const projects = [
     description: "Experience exquisite living at Nova Exotica. A symbol of modern architecture and luxury, offering spacious apartments with world-class amenities for a truly exotic lifestyle.",
     amenities: ["Swimming Pool", "Clubhouse", "Gymnasium", "Private Balconies"],
     gallery: [
-        { src: "https://i.postimg.cc/HnYGR0pG/top-view-30x40.jpg", alt: "Top view of Nova Exotica", aiHint: "building top view" },
-        { src: "/image.png", alt: "Nova Exotica", aiHint: "modern apartment building" },
-        { src: "/image copy.png", alt: "Nova Exotica", aiHint: "modern apartment building" },
+        { src: "https://i.postimg.cc/HnYGR0pG/top-view-30x40.jpg", alt: "Top view of Nova Exotica, a luxury real estate project in Palghar", aiHint: "building top view" },
+        { src: "/image.png", alt: "Nova Exotica by Navkar Group - a modern apartment building in Palghar", aiHint: "modern apartment building" },
+        { src: "/image copy.png", alt: "Nova Exotica residential project by Navkar Group in Palghar", aiHint: "modern apartment building" },
     ],
     brochureUrl: "/2.pdf",
   },
@@ -60,12 +64,12 @@ export const projects = [
     description: "Shreeram Sampaada is a landmark mixed-use development offering luxurious 2 BHK residences, commercial offices, and anchor shops. Located just 5 minutes from Palghar Railway Station, it is positioned as Palghar\'s most iconic project, blending luxury living with prime commercial opportunities.",
     amenities: ["2-level Stack Parking", "Toddlers Play Area", "Gymnasium", "Garden Spaces", "Jogging Track", "Dedicated Commercial Entry"],
     gallery: [
-        { src: "/0.jpg", alt: "Shreeram Sampaada front view", aiHint: "modern mixed-use building front view" },
-        { src: "/s1.jpg", alt: "Shreeram Sampaada side view", aiHint: "modern mixed-use building side view" },
-        { src: "/s2.jpg", alt: "Shreeram Sampaada back view", aiHint: "modern mixed-use building back view" },
-        { src: "/s3.jpg", alt: "Shreeram Sampaada aerial view", aiHint: "modern mixed-use building aerial view" },
-        { src: "/s4.jpg", alt: "Shreeram Sampaada close-up view", aiHint: "modern mixed-use building close-up view" },
-        { src: "/s5.jpg", alt: "Shreeram Sampaada interior view", aiHint: "modern mixed-use building interior view" },
+        { src: "/0.jpg", alt: "Shreeram Sampaada, a mixed-use construction project by Navkar Group in Palghar", aiHint: "modern mixed-use building front view" },
+        { src: "/s1.jpg", alt: "Side view of Shreeram Sampaada, a Navkar Group real estate development in Palghar", aiHint: "modern mixed-use building side view" },
+        { src: "/s2.jpg", alt: "Back view of the Shreeram Sampaada building in Palghar", aiHint: "modern mixed-use building back view" },
+        { src: "/s3.jpg", alt: "Aerial view of the Shreeram Sampaada project by Navkar Group", aiHint: "modern mixed-use building aerial view" },
+        { src: "/s4.jpg", alt: "Close-up view of the Shreeram Sampaada construction project", aiHint: "modern mixed-use building close-up view" },
+        { src: "/s5.jpg", alt: "Interior view of a property at Shreeram Sampaada in Palghar", aiHint: "modern mixed-use building interior view" },
     ],
     brochureUrl: "/3.pdf",
   },
@@ -82,11 +86,11 @@ export const projects = [
     description: "Shiv Aashish Industrial Estate offers numerous industrial units (galas) under construction. It is an ideal location for businesses looking to expand their operations in a thriving industrial hub.",
     amenities: ["24/7 Security", "Loading/Unloading Docks", "Ample Parking", "Power Backup"],
     gallery: [
-        { src: "https://i.postimg.cc/C1hpyb0V/Whats-App-Image-2025-08-26-at-5-25-29-PM.jpg", alt: "Shiv Aashish Industrial Estate", aiHint: "industrial building" },
-        { src: "/11.jpg", alt: "Shiv Aashish Industrial Estate f", aiHint: "industrial building f" },
-        { src: "/22.jpg", alt: "Shiv Aashish Industrial Estate b", aiHint: "industrial building b" },
-        { src: "/33.jpg", alt: "Shiv Aashish Industrial Estate c", aiHint: "industrial building c" },
-        { src: "/44.jpg", alt: "Shiv Aashish Industrial Estate d", aiHint: "industrial building d" },
+        { src: "https://i.postimg.cc/C1hpyb0V/Whats-App-Image-2025-08-26-at-5-25-29-PM.jpg", alt: "Shiv Aashish Industrial Estate by Navkar Group in Palghar", aiHint: "industrial building" },
+        { src: "/11.jpg", alt: "Front view of the Shiv Aashish Industrial Estate, a Navkar Group project", aiHint: "industrial building f" },
+        { src: "/22.jpg", alt: "Back view of the Shiv Aashish Industrial Estate in Palghar", aiHint: "industrial building b" },
+        { src: "/33.jpg", alt: "Close-up of the Shiv Aashish Industrial Estate construction", aiHint: "industrial building c" },
+        { src: "/44.jpg", alt: "Another view of the Shiv Aashish Industrial Estate by Navkar Group", aiHint: "industrial building d" },
     ],
     brochureUrl: "/shiv5.pdf",
   },
@@ -101,10 +105,10 @@ export const projects = [
     image: "https://i.postimg.cc/NjW3Bvgk/bldg-1-20x30.jpg",
     aiHint: "modern apartment building",
     reraNo: "P99000031100",
-    description: "Guruji Residency is a residential development by Navkar Developers, marketed with the tagline 'The Key to your Happiness.' The project is located opposite Chaphekar College and offers a modern living experience with easy access to local amenities and transportation.",
+    description: "Guruji Residency is a residential development by Navkar Developers, marketed with the tagline \'The Key to your Happiness.\' The project is located opposite Chaphekar College and offers a modern living experience with easy access to local amenities and transportation.",
     amenities: ["Proximity to College", "Close to NH-8", "Nearby Shops & Services"],
     gallery: [
-        { src: "https://i.postimg.cc/NjW3Bvgk/bldg-1-20x30.jpg", alt: "Guruji Residency", aiHint: "modern apartment building" },
+        { src: "https://i.postimg.cc/NjW3Bvgk/bldg-1-20x30.jpg", alt: "Guruji Residency, a new residential project by Navkar Group in Palghar", aiHint: "modern apartment building" },
        
     ],
     brochureUrl: "/3.pdf",
