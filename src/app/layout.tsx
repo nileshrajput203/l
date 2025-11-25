@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: 'Navkar Group | Best Construction & Real Estate in Palghar',
   description: 'Navkar Group is a leading real estate and construction company in Palghar, dedicated to crafting quality landmarks that elevate city skylines. Discover our residential and commercial projects.',
   keywords: 'Navkar Group, Navkar Living, construction Palghar, real estate Palghar, property developer Palghar, best construction group in Palghar, residential projects Palghar, commercial projects Palghar',
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
