@@ -106,7 +106,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
                 </h3>
                 <p className="mt-1 flex items-center gap-2 text-white/90">
                     <MapPin className="h-5 w-5 flex-shrink-0" />
-                    <span className="font-medium">{project.location}</span>
+                    <span className="font-medium">{project.displayLocation}</span>
                 </p>
             </div>
           </div>
@@ -202,7 +202,7 @@ function ProjectListItem({ project, index }: { project: (typeof projects)[0]; in
           <div className="mt-6 space-y-4 text-gray-600">
             <div className="flex items-center gap-3">
               <MapPin className="h-5 w-5 text-primary flex-shrink-0" />
-              <span>{project.location}</span>
+              <span>{project.displayLocation}</span>
             </div>
             <div className="flex items-center gap-3">
               <Ruler className="h-5 w-5 text-primary flex-shrink-0" />
