@@ -1,14 +1,15 @@
 import { ShieldCheck, Trees, Landmark, Users } from "lucide-react";
 
 export const heroImages: { src: string; alt: string; aiHint: string }[] = [
-  { src: "/banner1.jpg", alt: "Presenting Palghar's Most Iconic Project", aiHint: "modern building exterior" },
+  { src: "/banner1.jpg", alt: "Presenting Palghar\'s Most Iconic Project", aiHint: "modern building exterior" },
 ];
 
 export const projects = [
   {
     id: 1,
     name: "Navkar Heights",
-    location: "Palghar, Maharashtra",
+    location: "19°42\'01.7\"N 72°45\'52.8\"E",
+    displayLocation: "Punit Nagar,Juna Palghar,Palghar, Maharashtra- 401404",
     type: "Residential",
     status: "Sold Out",
     area: "1,200 - 1,800 sq.ft.",
@@ -16,16 +17,20 @@ export const projects = [
     aiHint: "modern house",
     reraNo: "P99000012345",
     description: "Discover modern living at Navkar Heights, a residential project in Palghar. Offering thoughtfully designed 2 & 3 BHK apartments, it combines comfort with the convenience of being located near the railway station, making your daily commute effortless.",
-    amenities: ["24/7 Security", "Children's Play Area", "Landscaped Gardens", "Power Backup"],
+    amenities: ["24/7 Security", "Children\'s Play Area", "Landscaped Gardens", "Power Backup"],
     gallery: [
       { src: "https://i.postimg.cc/bNYhN3FY/Whats-App-Image-2025-08-25-at-4-55-07-PM-2.jpg", alt: "Exterior view of Navkar Heights", aiHint: "modern building exterior" },
       { src: "https://i.postimg.cc/8z8mm0QN/Whats-App-Image-2025-08-25-at-4-55-07-PM-1.jpg", alt: "Navkar Heights building front view", aiHint: "modern building" },
+      { src: "/n1.jpg", alt: "Navkar Heights building side view", aiHint: "modern building" },
+      { src: "/n2.jpg", alt: "Navkar Heights building back view", aiHint: "modern " },
+      { src: "/n3.jpg", alt: "Navkar Heights building up view", aiHint: "modern style" },
     ],
   },
   {
     id: 2,
     name: "Nova Exotica",
-    location: "Palghar, Maharashtra",
+    location: "19°41\'56.8\"N 72°46\'00.8\"E",
+    displayLocation: "Navkar Venture, Sur.no. 97/1, Vajli Pada, Devisha Road, Palghar West, Maharashtra 401404",
     type: "Residential",
     status: "Ongoing",
     area: "1,500 - 2,500 sq.ft.",
@@ -44,14 +49,15 @@ export const projects = [
   {
     id: 3,
     name: "Shreeram Sampaada",
-    location: "Beside ICICI Bank, Mahim Road, Palghar",
+    location: "19°41\'41.7\"N 72°45\'59.5\"E",
+    displayLocation: "Shreeram Sampaada, beside ICICI Bank, Mahim Road, Palghar-401404, Maharashtra",
     type: "Residential & Commercial",
     status: "New Launch",
     area: "Residences: 646-651 sq.ft | Shops: 170-898 sq.ft | Offices: 258-545 sq.ft",
     image: "https://i.postimg.cc/d11VKbR6/shree-Ram-sampada-3-D-Img-page-0001.jpg",
     aiHint: "modern mixed-use building",
     reraNo: "Not Mentioned",
-    description: "Shreeram Sampaada is a landmark mixed-use development offering luxurious 2 BHK residences, commercial offices, and anchor shops. Located just 5 minutes from Palghar Railway Station, it is positioned as Palghar's most iconic project, blending luxury living with prime commercial opportunities.",
+    description: "Shreeram Sampaada is a landmark mixed-use development offering luxurious 2 BHK residences, commercial offices, and anchor shops. Located just 5 minutes from Palghar Railway Station, it is positioned as Palghar\'s most iconic project, blending luxury living with prime commercial opportunities.",
     amenities: ["2-level Stack Parking", "Toddlers Play Area", "Gymnasium", "Garden Spaces", "Jogging Track", "Dedicated Commercial Entry"],
     gallery: [
         { src: "/0.jpg", alt: "Shreeram Sampaada front view", aiHint: "modern mixed-use building front view" },
@@ -66,7 +72,8 @@ export const projects = [
   {
     id: 4,
     name: "Shiv Aashish Industrial Estate",
-    location: "Palghar, Maharashtra",
+    location: "PQ6H+PCC, Virendra Nagar, Palghar, Maharashtra 401404",
+    displayLocation: "Navkar Industries, Vevoor, Palghar (East)",
     type: "Industrial",
     status: "Ongoing",
     area: "Units from 500 sq.ft.",
@@ -81,11 +88,13 @@ export const projects = [
         { src: "/33.jpg", alt: "Shiv Aashish Industrial Estate c", aiHint: "industrial building c" },
         { src: "/44.jpg", alt: "Shiv Aashish Industrial Estate d", aiHint: "industrial building d" },
     ],
+    brochureUrl: "/shiv5.pdf",
   },
   {
     id: 5,
     name: "Guruji Residency",
-    location: "Tembhode Road, Palghar (West)",
+    location: "PQ44+PGP Palghar, Maharashtra",
+    displayLocation: "Opposite Chaphekar College, Tembhode, Palghar (West)",
     type: "Residential",
     status: "New Launch",
     area: "Not specified",
@@ -153,7 +162,7 @@ export const testimonials = [
   },
   {
     quote: "We were impressed by the modern design and the thoughtful layout of the apartment. It feels spacious and gets plenty of natural light. A great investment.",
-    author: "The D'souza Family",
+    author: "The D\'souza Family",
     location: "Homeowners, Navkar Heights",
     avatar: "/4.jpg",
   }

@@ -172,17 +172,19 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                         <h3 className="text-lg font-semibold">Site Address</h3>
                         <p className="mt-2 text-muted-foreground">
                             <MapPin className="inline-block h-4 w-4 mr-2 text-primary"/>
-                            {project.location}
+                            {project.displayLocation}
                         </p>
                         <Button asChild className="mt-4"> 
                             <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(project.location)}`} target="_blank">View on Google Maps</a>
                         </Button>
                     </div>
                     <div className="aspect-[4/3] w-full bg-muted rounded-md overflow-hidden">
-                         {/* Placeholder for map iframe */}
-                         <div className="w-full h-full flex items-center justify-center text-muted-foreground/50">
-                             <p>Google Map Preview</p>
-                         </div>
+                         <iframe 
+                            className="w-full h-full"
+                            src={`https://maps.google.com/maps?q=${encodeURIComponent(project.location)}&output=embed`}
+                            title={`Map of ${project.name}`}
+                            loading="lazy"
+                         ></iframe>
                     </div>
                 </div>
             </section>
