@@ -146,7 +146,7 @@ export function Enquiry() {
               </div>
               <div>
                 <div className="font-semibold">Email</div>
-                <a href="mailto:sales@navkargoup.in" className="text-muted-foreground hover:text-primary transition-colors">sales@navkargoup.in</a>
+                <a href="mailto:sales@navkargroup.co" className="text-muted-foreground hover:text-primary transition-colors">sales@navkargroup.co</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
