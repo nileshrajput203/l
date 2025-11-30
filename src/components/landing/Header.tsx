@@ -204,7 +204,10 @@ export function Header() {
                 return (
                   <button
                     key={link.label}
-                    onClick={openEnquiryPopup}
+                    onClick={() => {
+                      openEnquiryPopup();
+                      setMenuOpen(false);
+                    }}
                     className='bg-white text-gray-900 rounded-lg py-3 px-4 text-base font-semibold uppercase tracking-wide transition-all duration-300 ease-in-out hover:bg-gray-200 mt-4'>
                     {link.label}
                   </button>
