@@ -77,26 +77,26 @@ export function PopupApplication() {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] w-[95vw] max-w-none p-4 sm:p-6 rounded-xl">
         <DialogHeader>
-          <DialogTitle>Apply for {jobTitle}</DialogTitle>
+          <DialogTitle className="text-lg sm:text-xl">Apply for {jobTitle}</DialogTitle>
           <DialogDescription>
             Please fill out the form below to submit your application.
           </DialogDescription>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+        <form onSubmit={handleSubmit} className="grid gap-3 sm:gap-4 py-2 sm:py-4">
           <input type="hidden" name="jobTitle" value={jobTitle || ""} />
           <div className="space-y-2">
             <Label htmlFor="application-name">Your Name</Label>
-            <Input id="application-name" name="name" placeholder="e.g. John Doe" required />
+            <Input id="application-name" name="name" placeholder="e.g. John Doe" required className="text-sm" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="application-phone">Phone Number</Label>
-            <Input id="application-phone" name="phone" type="tel" placeholder="e.g. 9876543210" required />
+            <Input id="application-phone" name="phone" type="tel" placeholder="e.g. 9876543210" required className="text-sm" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="application-email">Email</Label>
-            <Input id="application-email" name="email" type="email" placeholder="e.g. john.doe@example.com" required />
+            <Input id="application-email" name="email" type="email" placeholder="e.g. john.doe@example.com" required className="text-sm" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="application-resume">Resume (PDF, DOC, DOCX up to 5MB)</Label>
@@ -106,7 +106,7 @@ export function PopupApplication() {
                   name="resume" 
                   type="file" 
                   required 
-                  className="cursor-pointer"
+                  className="cursor-pointer text-sm"
                   accept=".pdf,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                 />
             </div>

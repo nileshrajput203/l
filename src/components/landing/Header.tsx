@@ -84,19 +84,11 @@ export function Header() {
     };
   }, [pathname, handleScroll]);
 
-  const inactiveLinkClasses = isProjectPage
-    ? 'text-white hover:text-gray-200'
-    : 'text-gray-300 hover:text-white';
+  const inactiveLinkClasses = 'text-gray-300 hover:text-white';
 
   return (
     <>
       <style>{`
-        .header--project {
-          background: rgba(31, 33, 33, 0.95);
-          backdrop-filter: blur(10px);
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
         .mobile-menu-open {
           overflow: hidden;
         }
@@ -112,12 +104,10 @@ export function Header() {
         }
       `}</style>
       <header
-        className={`absolute top-0 left-0 right-0 z-50 transition-colors duration-300 ${
-          isProjectPage ? 'header--project' : ''
-        }`}>
+        className={`absolute top-0 left-0 right-0 z-[100] transition-colors duration-300`}>
         <div className='mx-auto max-w-7xl px-4'>
-          <div className='relative flex items-center justify-between h-20'>
-            <nav className='hidden md:flex flex-1 items-center gap-[45px]'>
+          <div className='relative flex items-center justify-between h-16 md:h-20'>
+            <nav className='hidden md:flex flex-1 items-center gap-6 md:gap-[45px]'>
               {leftNavLinks.map((link) => (
                 <a
                   key={link.href}
@@ -135,17 +125,18 @@ export function Header() {
 
             <a
               href='/'
-              className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 font-bold text-xl'>
+              className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 font-bold text-lg md:text-xl'>
               <Image
                 src='/navkarlogo.png'
                 alt='Navkar Logo'
-                width={100}
-                height={100}
+                width={60}
+                height={60}
+                className='md:w-[80px] md:h-[80px] w-[60px] h-[60px]'
               />
             </a>
 
             <div className='flex flex-1 items-center justify-end gap-2'>
-              <nav className='hidden md:flex items-center gap-[45px]'>
+              <nav className='hidden md:flex items-center gap-6 md:gap-[45px]'>
                 {rightNavLinks.map((link) => {
                   if (link.label === 'ENQUIRY NOW') {
                     return (
@@ -174,7 +165,7 @@ export function Header() {
               </nav>
 
               <button
-                className={`md:hidden p-2 rounded-lg border -mr-2 ${
+                className={`md:hidden p-2 rounded-lg border -mr-1 ${
                   isProjectPage ? 'text-white' : 'text-white'
                 }`}
                 onClick={() => setMenuOpen((s) => !s)}
@@ -191,32 +182,44 @@ export function Header() {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 z-40 bg-black bg-opacity-50 backdrop-blur-sm md:hidden ${
+          className={`fixed inset-0 z-[95] bg-black/60 backdrop-blur-sm md:hidden ${
             menuOpen ? 'block' : 'hidden'
           }`}
           onClick={() => setMenuOpen(false)} />
         <div
-          className={`fixed top-0 right-0 h-full w-64 bg-gray-900 shadow-lg z-50 p-6 md:hidden ${
+          className={`fixed top-0 right-0 h-full w-[280px] bg-gradient-to-b from-gray-900 to-gray-800 shadow-2xl z-[100] md:hidden ${
             menuOpen ? 'mobile-nav' : 'mobile-nav-closed'
           }`}>
-          <div className='flex justify-between items-center mb-8'>
+          <div className='flex justify-between items-center p-5 border-b border-gray-700'>
             <h2 className='text-white text-xl font-bold'>Menu</h2>
-            <button onClick={() => setMenuOpen(false)} className='text-white'>
+            <button 
+              onClick={() => setMenuOpen(false)} 
+              className='text-white hover:bg-white/10 p-2 rounded-lg transition-colors'>
               <X className='h-6 w-6' />
             </button>
           </div>
-          <nav className='flex flex-col gap-4'>
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`py-2 text-lg ${
-                  isProjectPage ? 'text-white' : 'text-gray-300'
-                } hover:text-white transition-colors duration-200`}
-                onClick={() => handleNavClick(link.href)}>
-                {link.label}
-              </a>
-            ))}
+          <nav className='flex flex-col p-5 gap-2'>
+            {navLinks.map((link) => {
+              if (link.label === 'ENQUIRY NOW') {
+                return (
+                  <button
+                    key={link.label}
+                    onClick={openEnquiryPopup}
+                    className='bg-white text-gray-900 rounded-lg py-3 px-4 text-base font-semibold uppercase tracking-wide transition-all duration-300 ease-in-out hover:bg-gray-200 mt-4'>
+                    {link.label}
+                  </button>
+                );
+              }
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className='text-gray-200 hover:text-white hover:bg-white/10 py-3 px-4 rounded-lg text-base font-medium transition-all duration-200'
+                  onClick={() => handleNavClick(link.href)}>
+                  {link.label}
+                </a>
+              );
+            })}
           </nav>
         </div>
       </header>

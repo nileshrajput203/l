@@ -17,17 +17,17 @@ export function About() {
   return (
     <motion.section 
       id="about" 
-      className="py-16 md:py-24 bg-secondary"
+      className="py-12 md:py-24 bg-secondary"
       initial={fadeInAnimation.initial}
       whileInView={fadeInAnimation.whileInView}
       transition={fadeInAnimation.transition}
     >
-      <div className="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div className="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div>
-          <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
+          <h3 className="text-2xl md:text-4xl font-bold tracking-tight">
             Building with Integrity, Delivering with Excellence
           </h3>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-base md:text-lg text-muted-foreground">
             For over a decade, Navkar Group has shaped neighbourhoods with
             thoughtfully designed projects that prioritise liveability,
             sustainability and value creation. Our commitment spans the full
@@ -35,15 +35,15 @@ export function About() {
             customer care.
           </p>
 
-          <div className="mt-8 grid sm:grid-cols-2 gap-6">
+          <div className="mt-6 md:mt-8 grid sm:grid-cols-2 gap-4 md:gap-6">
             {features.map((f) => (
-              <div key={f.title} className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10 text-primary">
-                  <f.icon className="h-6 w-6" />
+              <div key={f.title} className="flex items-start gap-3">
+                <div className="p-2 md:p-3 rounded-full bg-primary/10 text-primary flex-shrink-0">
+                  <f.icon className="h-5 w-5 md:h-6 md:w-6" />
                 </div>
                 <div>
-                  <div className="font-semibold text-lg">{f.title}</div>
-                  <div className="text-muted-foreground">{f.desc}</div>
+                  <div className="font-semibold text-base md:text-lg">{f.title}</div>
+                  <div className="text-sm md:text-base text-muted-foreground">{f.desc}</div>
                 </div>
               </div>
             ))}

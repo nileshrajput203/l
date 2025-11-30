@@ -262,26 +262,26 @@ export function Projects() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
   return (
-    <section id="projects" className="featured-projects py-20 bg-gray-50/50" ref={sectionRef}>
+    <section id="projects" className="featured-projects py-12 md:py-20 bg-gray-50/50" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col md:flex-row justify-between items-center mb-12 md:mb-20 gap-6"
+          className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-20 gap-5 md:gap-6"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight text-center">Featured Projects</h2>
-          <div className="flex items-center justify-center gap-2 p-1.5 bg-gray-200/60 rounded-full shadow-sm">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight text-center">Featured Projects</h2>
+          <div className="flex items-center justify-center gap-1.5 md:gap-2 p-1 bg-white md:bg-gray-200/60 rounded-full shadow-sm border border-gray-300 md:border-transparent">
             {TABS.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setFilter(tab)}
                 suppressHydrationWarning
                 className={cn(
-                  "px-5 py-2.5 rounded-full text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                  "px-4 md:px-5 py-2 rounded-full text-xs md:text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 border md:border-0",
                   filter === tab
-                    ? "bg-primary text-white shadow-md"
-                    : "text-gray-600 hover:bg-white/80"
+                    ? "bg-primary text-white shadow-md border-transparent"
+                    : "text-gray-700 md:text-gray-600 bg-white md:bg-transparent hover:bg-white/80 border-gray-300"
                 )}
               >
                 {tab}
@@ -301,7 +301,7 @@ export function Projects() {
             variants={containerVariants}
             initial="initial"
             animate="animate"
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10"
           >
             {filteredProjects.map((p) => (
               <ProjectCard key={p.id} project={p} />

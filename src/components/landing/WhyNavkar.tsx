@@ -37,20 +37,20 @@ export function WhyNavkar() {
   return (
     <motion.section 
       id="why" 
-      className="py-16 md:py-24 bg-secondary/40"
+      className="py-12 md:py-24 bg-secondary/40"
       initial={fadeInAnimation.initial}
       whileInView={fadeInAnimation.whileInView}
       transition={fadeInAnimation.transition}
     >
       <div className="mx-auto max-w-7xl px-4">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Why Choose Navkar</h2>
-          <p className="mt-2 text-lg text-muted-foreground max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tight">Why Choose Navkar</h2>
+          <p className="mt-2 text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
             Trusted delivery, sustainable design, and enduring value across Palghar.
           </p>
         </div>
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-8 md:mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {whyFeatures.map((f, index) => (
             <motion.div
               key={f.title}
@@ -60,14 +60,14 @@ export function WhyNavkar() {
               transition={{ delay: index * 0.1, duration: 0.4, ease: "easeInOut" }}
             >
               <Card className="text-center rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 h-full bg-secondary/50">
-                <CardHeader className="items-center">
-                  <div className="p-4 rounded-full inline-flex bg-primary text-primary-foreground">
-                    <f.icon className="h-8 w-8" />
+                <CardHeader className="items-center pb-3 md:pb-6">
+                  <div className="p-3 md:p-4 rounded-full inline-flex bg-primary text-primary-foreground">
+                    <f.icon className="h-6 w-6 md:h-8 md:w-8" />
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <CardTitle className="text-xl">{f.title}</CardTitle>
-                  <p className="mt-2 text-muted-foreground">{f.desc}</p>
+                <CardContent className="pt-0">
+                  <CardTitle className="text-lg md:text-xl">{f.title}</CardTitle>
+                  <p className="mt-2 text-sm md:text-base text-muted-foreground">{f.desc}</p>
                 </CardContent>
               </Card>
             </motion.div>

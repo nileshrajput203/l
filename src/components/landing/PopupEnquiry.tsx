@@ -74,25 +74,25 @@ export function PopupEnquiry() {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] w-[95vw] max-w-none p-4 sm:p-6 rounded-xl">
         <DialogHeader>
-          <DialogTitle>Enquire Now</DialogTitle>
+          <DialogTitle className="text-lg sm:text-xl">Enquire Now</DialogTitle>
           <DialogDescription>
             Share your details and our relationship team will connect with you.
           </DialogDescription>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+        <form onSubmit={handleSubmit} className="grid gap-3 sm:gap-4 py-2 sm:py-4">
           <div className="space-y-2">
             <Label htmlFor="popup-name">Your Name</Label>
-            <Input id="popup-name" name="name" placeholder="e.g. John Doe" required />
+            <Input id="popup-name" name="name" placeholder="e.g. John Doe" required className="text-sm" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="popup-phone">Phone Number</Label>
-            <Input id="popup-phone" name="phone" type="tel" placeholder="e.g. 9876543210" required />
+            <Input id="popup-phone" name="phone" type="tel" placeholder="e.g. 9876543210" required className="text-sm" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="popup-email">Email (Optional)</Label>
-            <Input id="popup-email" name="email" type="email" placeholder="e.g. john.doe@example.com" />
+            <Input id="popup-email" name="email" type="email" placeholder="e.g. john.doe@example.com" className="text-sm" />
           </div>
           <div className="space-y-2">
             <Label htmlFor="popup-message">Message</Label>
@@ -100,7 +100,7 @@ export function PopupEnquiry() {
               id="popup-message"
               name="message"
               placeholder="Your message..."
-              rows={3}
+              rows={4}
               required
             />
           </div>

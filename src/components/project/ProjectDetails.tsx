@@ -35,7 +35,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
   return (
     <div className="bg-background">
       {/* 1. Hero/Banner */}
-      <div className="relative h-64 md:h-96">
+      <div className="relative h-56 md:h-96">
         <Image
           src={project.image}
           alt={`Hero image for ${project.name}`}
@@ -48,7 +48,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
         <div className="absolute inset-0 flex items-end text-white">
           <div className="mx-auto max-w-7xl px-4 w-full pb-8">
             <motion.h1 
-              className="text-4xl md:text-6xl font-bold tracking-tight"
+              className="text-3xl md:text-6xl font-bold tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
@@ -56,7 +56,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
               {project.name}
             </motion.h1>
             <motion.p 
-              className="mt-2 text-lg md:text-xl font-medium text-primary-foreground/90"
+              className="mt-2 text-base md:text-xl font-medium text-primary-foreground/90"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
@@ -68,8 +68,8 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
       </div>
 
       {/* 2. Quick Action Buttons */}
-      <div className="border-b bg-secondary/50">
-          <div className="mx-auto max-w-7xl px-4 py-3 flex flex-wrap items-center justify-start gap-2 md:gap-4">
+      <div className="border-b bg-white/95 md:bg-secondary/50 sticky top-0 z-[40]">
+          <div className="mx-auto max-w-7xl px-3 md:px-4 py-2 md:py-3 flex flex-wrap items-center justify-start gap-2 md:gap-4">
             <Button variant="ghost" size="sm" onClick={openEnquiryPopup}>
               <Send className="mr-2 h-4 w-4" /> Quick Inquiry
             </Button>
@@ -98,14 +98,14 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
           </div>
       </div>
 
-      <main className="mx-auto max-w-7xl px-4 py-12 md:py-16">
-        <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
+      <main className="mx-auto max-w-7xl px-4 py-8 md:py-16">
+        <div className="grid lg:grid-cols-3 gap-6 md:gap-12">
           {/* Left Column */}
-          <div className="lg:col-span-2 space-y-12 md:space-y-16">
+          <div className="lg:col-span-2 space-y-8 md:space-y-16">
             
             {/* 3. Overview/Description Block */}
             <section id="overview">
-                <div className="grid md:grid-cols-2 gap-8 items-start">
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
                     <div className="aspect-[4/3] relative overflow-hidden rounded-lg shadow-md">
                         <Image 
                             src={project.gallery[1]?.src ?? project.image} 
@@ -116,8 +116,8 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                         />
                     </div>
                     <div className="flex flex-col h-full">
-                        <h2 className="text-3xl font-bold tracking-tight">Project Overview</h2>
-                        <p className="mt-4 text-muted-foreground flex-grow">{project.description}</p>
+                        <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Project Overview</h2>
+                        <p className="mt-3 md:mt-4 text-sm md:text-base text-muted-foreground flex-grow">{project.description}</p>
                         {reraInfo && (
                             <div className="mt-4 rounded-md border border-green-300 bg-green-50 p-3">
                                 <div className="flex items-center gap-3">
@@ -135,12 +135,12 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
 
             {/* 5. Amenities/Features Row */}
             <section id="amenities">
-                <h2 className="text-3xl font-bold tracking-tight">Amenities & Features</h2>
-                <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Amenities & Features</h2>
+                <div className="mt-5 md:mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                 {(project.amenities ?? []).map((amenity) => (
-                    <div key={amenity} className="flex items-center gap-3 p-3 rounded-lg bg-secondary/70">
-                        <CheckCircle2 className="h-5 w-5 text-[#1f2121] shrink-0" />
-                        <span className="font-medium text-sm">{amenity}</span>
+                    <div key={amenity} className="flex items-center gap-2.5 md:gap-3 p-2.5 md:p-3 rounded-lg bg-secondary/70">
+                        <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-[#1f2121] shrink-0" />
+                        <span className="font-medium text-xs md:text-sm">{amenity}</span>
                     </div>
                 ))}
                 </div>
@@ -148,8 +148,8 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
 
             {/* 4. Floor Plans/Gallery Section */}
             <section id="gallery">
-                <h2 className="text-3xl font-bold tracking-tight">Gallery</h2>
-                <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Gallery</h2>
+                <div className="mt-5 md:mt-6 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                     {project.gallery.map((image, index) => (
                         <div key={index} className="aspect-[4/3] relative overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105">
                              <Image
@@ -166,11 +166,11 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
             
             {/* 7. Location & Contact Section */}
             <section id="location">
-                <h2 className="text-3xl font-bold tracking-tight">Location</h2>
-                <div className="mt-6 grid md:grid-cols-2 gap-8 items-start rounded-lg border bg-secondary/50 p-6">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Location</h2>
+                <div className="mt-5 md:mt-6 grid md:grid-cols-2 gap-6 md:gap-8 items-start rounded-lg border bg-secondary/50 p-5 md:p-6">
                     <div>
-                        <h3 className="text-lg font-semibold">Site Address</h3>
-                        <p className="mt-2 text-muted-foreground">
+                        <h3 className="text-base md:text-lg font-semibold">Site Address</h3>
+                        <p className="mt-2 text-sm md:text-base text-muted-foreground">
                             <MapPin className="inline-block h-4 w-4 mr-2 text-primary"/>
                             {project.displayLocation}
                         </p>
@@ -195,11 +195,11 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
           <aside className="lg:col-span-1">
             <div className="sticky top-24">
                 <Card className="shadow-lg border-primary/20">
-                    <CardHeader>
-                        <CardTitle className="text-2xl flex items-center gap-2"><Send className="h-6 w-6 text-primary"/> Interested?</CardTitle>
+                    <CardHeader className="pb-4">
+                        <CardTitle className="text-xl md:text-2xl flex items-center gap-2"><Send className="h-5 w-5 md:h-6 md:w-6 text-primary"/> Interested?</CardTitle>
                     </CardHeader>
-                    <CardContent>
-                        <p className="text-muted-foreground mb-4">
+                    <CardContent className="pt-0">
+                        <p className="text-sm md:text-base text-muted-foreground mb-4">
                             Get the brochure, floor plans, and pricing details directly in your inbox.
                         </p>
                         <Button size="lg" className="w-full" onClick={openEnquiryPopup}>

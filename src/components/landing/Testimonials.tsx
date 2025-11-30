@@ -24,22 +24,22 @@ export function Testimonials() {
   return (
     <motion.section
       id="testimonials"
-      className="py-16 md:py-24 bg-secondary"
+      className="py-12 md:py-24 bg-secondary"
       initial={fadeInAnimation.initial}
       whileInView={fadeInAnimation.whileInView}
       transition={fadeInAnimation.transition}
     >
       <div className="mx-auto max-w-7xl px-4">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-bold tracking-tight">
             What Our Customers Say
           </h2>
-          <p className="mt-2 text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="mt-2 text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
             Hear from families who have found their dream homes with us.
           </p>
         </div>
 
-        <div className="mt-12">
+        <div className="mt-8 md:mt-12">
           <Carousel
             className="w-full max-w-5xl mx-auto"
             opts={{ loop: true, align: "start" }}
@@ -50,27 +50,27 @@ export function Testimonials() {
               }),
             ]}
           >
-            <CarouselContent className="-ml-4">
+            <CarouselContent className="-ml-2 md:-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="h-full p-1">
                     <Card className="h-full flex flex-col justify-between shadow-lg">
-                       <CardContent className="p-6 flex-grow flex flex-col">
-                         <div className="mb-5">
+                       <CardContent className="p-4 md:p-6 flex-grow flex flex-col">
+                         <div className="mb-4 md:mb-5">
                             <Image
                                 src={testimonial.avatar}
                                 alt={`${testimonial.author}'s avatar`}
-                                width={64}
-                                height={64}
-                                className="rounded-full object-cover w-16 h-16 shadow-md"
+                                width={56}
+                                height={56}
+                                className="rounded-full object-cover w-14 h-14 md:w-16 md:h-16 shadow-md"
                             />
                         </div>
-                        <blockquote className="text-muted-foreground italic flex-grow">
+                        <blockquote className="text-sm md:text-base text-muted-foreground italic flex-grow">
                           "{testimonial.quote}"
                         </blockquote>
                       </CardContent>
-                      <div className="p-6 pt-0">
-                        <p className="font-bold text-lg">{testimonial.author}</p>
+                      <div className="p-4 md:p-6 pt-0">
+                        <p className="font-bold text-base md:text-lg">{testimonial.author}</p>
                         <p className="text-sm text-muted-foreground">
                           {testimonial.location}
                         </p>

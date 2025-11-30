@@ -29,23 +29,23 @@ export default function CareersPageClient({ openings }: CareersPageClientProps) 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <main className="py-16 md:py-24">
+      <main className="py-12 md:py-24">
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
               Join Our Team
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
               We are always looking for passionate and talented individuals to help us build the future. Explore our current openings below.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <div className="mt-8 md:mt-12 grid gap-6 md:gap-8 lg:grid-cols-2">
             {openings.map((opening) => (
               <Card key={opening.title} className="shadow-lg hover:shadow-xl transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-2xl">{opening.title}</CardTitle>
-                  <CardDescription className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl md:text-2xl">{opening.title}</CardTitle>
+                  <CardDescription className="flex flex-wrap items-center gap-x-3 md:gap-x-4 gap-y-1.5 md:gap-y-2 pt-2 text-sm">
                     <span className="inline-flex items-center gap-2">
                       <Briefcase className="h-4 w-4" /> {opening.department}
                     </span>
@@ -57,9 +57,9 @@ export default function CareersPageClient({ openings }: CareersPageClientProps) 
                     </span>
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{opening.description}</p>
-                  <Button onClick={() => open(opening.title)}>Apply Now</Button>
+                <CardContent className="pt-0">
+                  <p className="text-sm md:text-base text-muted-foreground mb-4">{opening.description}</p>
+                  <Button onClick={() => open(opening.title)} size="default">Apply Now</Button>
                 </CardContent>
               </Card>
             ))}

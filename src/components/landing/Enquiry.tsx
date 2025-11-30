@@ -71,41 +71,42 @@ export function Enquiry() {
   return (
     <motion.section 
       id="contact" 
-      className="py-16 md:py-24 bg-background"
+      className="py-12 md:py-24 bg-background"
       initial={fadeInAnimation.initial}
       whileInView={fadeInAnimation.whileInView}
       transition={fadeInAnimation.transition}
     >
-      <div className="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-10 items-start">
-        <div className="bg-secondary p-8 rounded-lg">
-          <h3 className="text-3xl md:text-4xl font-bold tracking-tight">Get in Touch</h3>
-          <p className="mt-2 text-muted-foreground max-w-prose">
+      <div className="mx-auto max-w-7xl px-4 grid md:grid-cols-2 gap-6 md:gap-10 items-start">
+        <div className="bg-secondary p-6 md:p-8 rounded-lg">
+          <h3 className="text-2xl md:text-4xl font-bold tracking-tight">Get in Touch</h3>
+          <p className="mt-2 text-sm md:text-base text-muted-foreground max-w-prose">
             Have a question or a project in mind? Fill out the form below and our team will get back to you soon.
           </p>
 
-          <form onSubmit={handleSubmit} className="mt-6 grid gap-4">
-             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Your Name</Label>
-                <Input id="name" name="name" placeholder="e.g. John Doe" required />
+          <form onSubmit={handleSubmit} className="mt-5 md:mt-6 grid gap-3 md:gap-4">
+             <div className="grid sm:grid-cols-2 gap-3 md:gap-4">
+              <div className="space-y-1.5 md:space-y-2">
+                <Label htmlFor="name" className="text-sm">Your Name</Label>
+                <Input id="name" name="name" placeholder="e.g. John Doe" required className="text-sm" />
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" name="phone" type="tel" placeholder="e.g. 9876543210" required />
+              <div className="space-y-1.5 md:space-y-2">
+                <Label htmlFor="phone" className="text-sm">Phone Number</Label>
+                <Input id="phone" name="phone" type="tel" placeholder="e.g. 9876543210" required className="text-sm" />
               </div>
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">Email (Optional)</Label>
-              <Input id="email" name="email" type="email" placeholder="e.g. john.doe@example.com" />
+            <div className="space-y-1.5 md:space-y-2">
+              <Label htmlFor="email" className="text-sm">Email (Optional)</Label>
+              <Input id="email" name="email" type="email" placeholder="e.g. john.doe@example.com" className="text-sm" />
             </div>
-             <div className="space-y-2">
-              <Label htmlFor="message">Message</Label>
+             <div className="space-y-1.5 md:space-y-2">
+              <Label htmlFor="message" className="text-sm">Message</Label>
               <Textarea
                 id="message"
                 name="message"
                 placeholder="Your message..."
                 rows={4}
                 required
+                className="text-sm"
               />
             </div>
             <Button type="submit" size="lg" disabled={isSubmitting} suppressHydrationWarning>
@@ -124,25 +125,25 @@ export function Enquiry() {
           </form>
         </div>
 
-        <div className="rounded-lg p-8 bg-secondary">
-          <h4 className="text-2xl font-bold tracking-tight">Contact Information</h4>
-          <p className="mt-2 text-muted-foreground">
+        <div className="rounded-lg p-6 md:p-8 bg-secondary">
+          <h4 className="text-xl md:text-2xl font-bold tracking-tight">Contact Information</h4>
+          <p className="mt-2 text-sm md:text-base text-muted-foreground">
             Visit our experience centre or reach us via phone/email.
           </p>
 
-          <div className="mt-6 grid gap-6 text-base">
-            <div className="flex items-center gap-4">
-              <div className="p-3 bg-primary/10 rounded-full text-primary">
-                <Phone className="h-6 w-6" />
+          <div className="mt-5 md:mt-6 grid gap-4 md:gap-6 text-sm md:text-base">
+            <div className="flex items-center gap-3 md:gap-4">
+              <div className="p-2.5 md:p-3 bg-primary/10 rounded-full text-primary flex-shrink-0">
+                <Phone className="h-5 w-5 md:h-6 md:w-6" />
               </div>
               <div>
-                <div className="font-semibold">Phone (Main Office)</div>
-                <a href="tel:+917888022744" className="text-muted-foreground hover:text-primary transition-colors">+91 78880 22744</a>
+                <div className="font-semibold text-sm md:text-base">Phone (Main Office)</div>
+                <a href="tel:+917888022744" className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">+91 78880 22744</a>
               </div>
             </div>
-             <div className="flex items-center gap-4">
-               <div className="p-3 bg-primary/10 rounded-full text-primary">
-                <Mail className="h-6 w-6" />
+             <div className="flex items-center gap-3 md:gap-4">
+               <div className="p-2.5 md:p-3 bg-primary/10 rounded-full text-primary flex-shrink-0">
+                <Mail className="h-5 w-5 md:h-6 md:w-6" />
               </div>
               <div>
                 <div className="font-semibold">Email</div>
