@@ -23,6 +23,7 @@ export function Header() {
   const { open: openEnquiryPopup } = useEnquiryStore();
 
   const isProjectPage = pathname.startsWith('/projects');
+  const isCareersPage = pathname === '/careers';
 
   useEffect(() => {
     if (menuOpen) {
@@ -104,7 +105,7 @@ export function Header() {
         }
       `}</style>
       <header
-        className={`absolute top-0 left-0 right-0 z-[100] transition-colors duration-300`}>
+        className={`absolute top-0 left-0 right-0 z-50 bg-[#1f2121] ${isProjectPage || isCareersPage ? 'md:bg-[#1f2121] shadow-md' : 'md:bg-transparent'} transition-colors duration-300`}>
         <div className='mx-auto max-w-7xl px-4'>
           <div className='relative flex items-center justify-between h-16 md:h-20'>
             <nav className='hidden md:flex flex-1 items-center gap-6 md:gap-[45px]'>
@@ -125,13 +126,13 @@ export function Header() {
 
             <a
               href='/'
-              className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 font-bold text-lg md:text-xl'>
+              className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center font-bold text-lg md:text-xl'>
               <Image
                 src='/navkarlogo.png'
                 alt='Navkar Logo'
-                width={60}
-                height={60}
-                className='md:w-[80px] md:h-[80px] w-[60px] h-[60px] object-contain'
+                width={110}
+                height={110}
+                className='md:w-[110px] md:h-[110px] w-[80px] h-[80px] object-contain'
               />
             </a>
 

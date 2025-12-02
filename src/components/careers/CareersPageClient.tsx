@@ -29,7 +29,7 @@ export default function CareersPageClient({ openings }: CareersPageClientProps) 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <main className="py-12 md:py-24">
+      <main className="pt-24 md:pt-32">
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight">

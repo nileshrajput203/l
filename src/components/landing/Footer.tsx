@@ -59,7 +59,7 @@ export function Footer() {
           {/* About Section */}
           <div className="space-y-3 md:space-y-4">
             <Link href="/" className="flex items-center gap-2 font-bold text-lg md:text-xl">
-              <Image src="/logo.png" alt="Navkar Logo" width={70} height={70} className="md:w-[80px] md:h-[80px]" />
+              <Image src="/logo.png" alt="Navkar Logo" width={70} height={70} className="md:w-[80px] md:h-[80px] object-contain" />
             </Link>
             <p className="text-sm md:text-base text-muted-foreground">
               Crafting landmarks with integrity and innovation for over a decade.
