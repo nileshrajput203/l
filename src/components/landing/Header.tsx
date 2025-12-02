@@ -131,7 +131,7 @@ export function Header() {
                 alt='Navkar Logo'
                 width={60}
                 height={60}
-                className='md:w-[80px] md:h-[80px] w-[60px] h-[60px]'
+                className='md:w-[80px] md:h-[80px] w-[60px] h-[60px] object-contain'
               />
             </a>
 
