@@ -2,12 +2,14 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Phone } from "lucide-react";
+import { Phone, UserPlus } from "lucide-react";
 import { FaWhatsapp } from 'react-icons/fa';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { footerLinks } from '@/lib/data';
+import { useCPPartnerStore } from '@/hooks/use-c-p-partner-store';
+import { Button } from '../ui/button';
 
 const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg 
@@ -32,6 +34,7 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const { open: openCPPartnerPopup } = useCPPartnerStore();
   const [year, setYear] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -77,6 +80,11 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button onClick={openCPPartnerPopup} className="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors">
+                    CP Partner
+                </button>
+              </li>
             </ul>
           </div>
           

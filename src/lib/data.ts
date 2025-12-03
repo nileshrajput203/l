@@ -122,7 +122,7 @@ export const projects = [
     type: "Residential",
     status: "New Launch",
     area: "Not specified",
-    image: "https://i.postimg.cc/NjW3Bvgk/bldg-1-20x30.jpg",
+    image: "guruji.png",
     aiHint: "modern apartment building",
     reraNo: "P99000031100",
     description: "Guruji Residency is a residential development by Navkar Developers, marketed with the tagline \'The Key to your Happiness.\' The project is located opposite Chaphekar College and offers a modern living experience with easy access to local amenities and transportation.",

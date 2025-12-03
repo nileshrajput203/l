@@ -96,9 +96,6 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                   <Download className="mr-2 h-4 w-4" /> Download Brochure
                 </Button>
               )}
-              <Button variant="ghost" size="sm" onClick={openCPPartnerPopup}>
-                <UserPlus className="mr-2 h-4 w-4" /> CP Partner
-              </Button>
                <Link href="/#projects" className="ml-auto">
                   <Button variant="outline" size="sm">
                       <ArrowLeft className="h-4 w-4 mr-2" />
