@@ -81,84 +81,86 @@ export function PopupCPPartner() {
 
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
-      <DialogContent className="w-[95vw] max-w-none sm:max-w-3xl p-4 sm:p-6 rounded-xl">
+      <DialogContent className="w-[95vw] max-w-none sm:max-w-3xl p-4 sm:p-6 rounded-xl overflow-y-auto max-h-[90vh]">
         <DialogHeader>
           <DialogTitle className="text-xl sm:text-2xl font-serif text-center">Channel Partner Registration</DialogTitle>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="mt-4 grid gap-4 sm:gap-6">
-          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-            <div className="space-y-1.5">
-              <Label htmlFor="cp-name">Name *</Label>
-              <Input id="cp-name" name="name" placeholder="Enter your name" required />
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="cp-email">Email *</Label>
-              <Input id="cp-email" name="email" type="email" placeholder="Enter your email" required />
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="cp-phone">Mobile No *</Label>
-              <Input id="cp-phone" name="phone" type="tel" placeholder="Enter your mobile number" required />
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="cp-rera">CP RERA NO</Label>
-              <Input id="cp-rera" name="reraNo" placeholder="Enter CP RERA number" />
-            </div>
-          </div>
-          
-          <div className="space-y-3">
-            <Label>Type</Label>
-            <RadioGroup 
-              defaultValue="individual"
-              onValueChange={setEntityType} 
-              className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2"
-            >
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="individual" id="type-individual" />
-                <Label htmlFor="type-individual">Individual</Label>
+        <div className="overflow-y-auto pr-2">
+          <form onSubmit={handleSubmit} className="mt-4 grid gap-4 sm:gap-6">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+              <div className="space-y-1.5">
+                <Label htmlFor="cp-name">Name *</Label>
+                <Input id="cp-name" name="name" placeholder="Enter your name" required />
               </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="proprietorship" id="type-proprietorship" />
-                <Label htmlFor="type-proprietorship">Proprietorship</Label>
+              <div className="space-y-1.5">
+                <Label htmlFor="cp-email">Email *</Label>
+                <Input id="cp-email" name="email" type="email" placeholder="Enter your email" required />
               </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="partnership" id="type-partnership" />
-                <Label htmlFor="type-partnership">Partnership</Label>
+              <div className="space-y-1.5">
+                <Label htmlFor="cp-phone">Mobile No *</Label>
+                <Input id="cp-phone" name="phone" type="tel" placeholder="Enter your mobile number" required />
               </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="limited company" id="type-limited" />
-                <Label htmlFor="type-limited">Limited Company</Label>
+              <div className="space-y-1.5">
+                <Label htmlFor="cp-rera">CP RERA NO</Label>
+                <Input id="cp-rera" name="reraNo" placeholder="Enter CP RERA number" />
               </div>
-            </RadioGroup>
-          </div>
+            </div>
+            
+            <div className="space-y-3">
+              <Label>Type</Label>
+              <RadioGroup 
+                defaultValue="individual"
+                onValueChange={setEntityType} 
+                className="flex flex-wrap gap-x-4 sm:gap-x-6 gap-y-2"
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="individual" id="type-individual" />
+                  <Label htmlFor="type-individual">Individual</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="proprietorship" id="type-proprietorship" />
+                  <Label htmlFor="type-proprietorship">Proprietorship</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="partnership" id="type-partnership" />
+                  <Label htmlFor="type-partnership">Partnership</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="limited company" id="type-limited" />
+                  <Label htmlFor="type-limited">Limited Company</Label>
+                </div>
+              </RadioGroup>
+            </div>
 
-          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-            <div className="space-y-1.5">
-              <Label htmlFor="cp-org-name">Organisation Name *</Label>
-              <Input id="cp-org-name" name="organisationName" placeholder="Enter organisation name" required />
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+              <div className="space-y-1.5">
+                <Label htmlFor="cp-org-name">Organisation Name *</Label>
+                <Input id="cp-org-name" name="organisationName" placeholder="Enter organisation name" required />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="cp-website">Website</Label>
+                <Input id="cp-website" name="website" placeholder="Enter website URL" />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="cp-address">Address *</Label>
+                <Input id="cp-address" name="address" placeholder="Enter address" required />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="cp-locality">Locality *</Label>
+                <Input id="cp-locality" name="locality" placeholder="Enter locality" required />
+              </div>
             </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="cp-website">Website</Label>
-              <Input id="cp-website" name="website" placeholder="Enter website URL" />
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="cp-address">Address *</Label>
-              <Input id="cp-address" name="address" placeholder="Enter address" required />
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="cp-locality">Locality *</Label>
-              <Input id="cp-locality" name="locality" placeholder="Enter locality" required />
-            </div>
-          </div>
 
-          <div className="mt-2 flex justify-center">
-            <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto px-10 bg-[#4CAF50] hover:bg-[#45a049]">
-              {isSubmitting ? (
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              ) : null}
-              Submit
-            </Button>
-          </div>
-        </form>
+            <div className="mt-2 flex justify-center">
+              <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto px-10 bg-[#4CAF50] hover:bg-[#45a049]">
+                {isSubmitting ? (
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                ) : null}
+                Submit
+              </Button>
+            </div>
+          </form>
+        </div>
       </DialogContent>
     </Dialog>
   );
