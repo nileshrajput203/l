@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "firebase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "firebase-tools@latest",
+        "experimental:mcp",
+        "--only",
+        "auth,firestore"
+      ]
+    },
+    "s1": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@21st-dev/cli@latest",
+        "install",
+        "cursor",
+        "--api-key",
+        "\"2087fd1362f98f1a1edfe4458da44012a37e51041ce03e301487cfc49e8cc429\""
+      ]
+    }
+  }
+}
