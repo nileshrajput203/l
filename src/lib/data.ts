@@ -49,7 +49,7 @@ export const projects = [
     aiHint: "luxury apartment",
     reraNo: "P99000067890",
     description: "Experience exquisite living at Nova Exotica. A symbol of modern architecture and luxury, offering spacious apartments with world-class amenities for a truly exotic lifestyle.",
-    amenities: ["Swimming Pool", "Clubhouse", "Gymnasium", "Private Balconies"],
+    amenities: ["CCTV", "Children's Play Area", "Power Backup", "Designer Entrance Lobby", "Branded High Speed Lifts", "Water Proofing"],
     gallery: [
         { src: "https://i.postimg.cc/HnYGR0pG/top-view-30x40.jpg", alt: "Top view of Nova Exotica, a luxury real estate project in Palghar", aiHint: "building top view" },
         { src: "/image.png", alt: "Nova Exotica by Navkar Group - a modern apartment building in Palghar", aiHint: "modern apartment building" },
@@ -69,7 +69,7 @@ export const projects = [
     aiHint: "modern mixed-use building",
     reraNo: "Not Mentioned",
     description: "Shreeram Sampaada is a landmark mixed-use development offering luxurious 2 BHK residences, commercial offices, and anchor shops. Located just 5 minutes from Palghar Railway Station, it is positioned as Palghar's most iconic project, blending luxury living with prime commercial opportunities.",
-    amenities: ["2-level Stack Parking", "Toddlers Play Area", "Gymnasium", "Garden Spaces", "Jogging Track", "Dedicated Commercial Entry"],
+    amenities: ["CCTV", "Terrace", "Lift", "Dedicated Commercial Entry"],
     gallery: [
         { src: "/0.jpg", alt: "Shreeram Sampaada, a mixed-use construction project by Navkar Group in Palghar", aiHint: "modern mixed-use building front view" },
         { src: "/s1.jpg", alt: "Side view of Shreeram Sampaada, a Navkar Group real estate development in Palghar", aiHint: "modern mixed-use building side view" },

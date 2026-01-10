@@ -53,6 +53,11 @@ const amenityIcons: { [key: string]: React.ReactElement } = {
   'CCTV': <FaCamera />,
   'Fountain': <FaTint />,
   'Gazebo': <FaTree />,
+  'Designer Entrance Lobby': <FaHome />,
+  'Branded High Speed Lifts': <GiElevator />,
+  'Water Proofing': <FaTint />,
+  'Terrace': <Building />,
+  'Dedicated Commercial Entry': <FaStore />,
 };
 
 
