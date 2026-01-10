@@ -19,6 +19,7 @@ const rightNavLinks = navLinks.slice(3);
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('/');
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const { open: openEnquiryPopup } = useEnquiryStore();
 
@@ -49,6 +50,9 @@ export function Header() {
     const scrollPosition = window.scrollY + 100;
     let currentSectionId = '';
 
+    // Track scroll for sticky header on mobile
+    setIsScrolled(window.scrollY > 50);
+
     for (let i = navLinks.length - 1; i >= 0; i--) {
       const link = navLinks[i];
       if (!link.href.startsWith('/#') || link.href === '#enquiry') continue;
@@ -70,18 +74,18 @@ export function Header() {
   }, []);
 
   useEffect(() => {
+    // Always track scroll for sticky header on mobile
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
     if (pathname === '/') {
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      handleScroll();
       setActiveLink('/');
     } else {
       setActiveLink(pathname);
     }
 
     return () => {
-      if (pathname === '/') {
-        window.removeEventListener('scroll', handleScroll);
-      }
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [pathname, handleScroll]);
 
@@ -105,7 +109,7 @@ export function Header() {
         }
       `}</style>
       <header
-        className={`absolute top-0 left-0 right-0 z-50 bg-[#1f2121] ${isProjectPage || isCareersPage ? 'md:bg-[#1f2121] shadow-md' : 'md:bg-transparent'} transition-colors duration-300`}>
+        className={`${isScrolled ? 'fixed' : 'absolute'} top-0 left-0 right-0 z-50 bg-[#1f2121] ${isProjectPage || isCareersPage ? 'md:bg-[#1f2121]' : isScrolled ? 'md:bg-[#1f2121]' : 'md:bg-transparent'} transition-all duration-300 ${isScrolled || isProjectPage || isCareersPage ? 'shadow-lg md:shadow-md' : ''}`}>
         <div className='mx-auto max-w-7xl px-4'>
           <div className='relative flex items-center justify-between h-16 md:h-20'>
             <nav className='hidden md:flex flex-1 items-center gap-6 md:gap-[45px]'>

@@ -10,18 +10,33 @@
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden bg-black pt-16 md:pt-0"
+      className="relative overflow-hidden bg-black pt-16 md:pt-0"
+      style={{ width: '100%' }}
     >
-      {/* Desktop / tablet: full-screen cover */}
-      <div className="relative hidden md:block w-full h-screen">
-        <Image
+      {/* Desktop / tablet: full-screen cover - scales with browser zoom */}
+      <div 
+        className="relative hidden md:block w-full"
+        style={{ 
+          width: '100vw',
+          height: '100vh',
+          position: 'relative',
+          left: '50%',
+          right: '50%',
+          marginLeft: '-50vw',
+          marginRight: '-50vw'
+        }}
+      >
+        <img
           src={hero.src}
           alt={hero.alt}
-          data-ai-hint={hero.aiHint}
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
+          className="w-full h-full object-cover"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            display: 'block'
+          }}
+          loading="eager"
         />
       </div>
 

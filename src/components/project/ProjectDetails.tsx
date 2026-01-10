@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   ArrowLeft,
   CheckCircle2,
@@ -13,7 +13,10 @@ import {
   Download,
   Send,
   Award,
-  UserPlus
+  UserPlus,
+  ChevronLeft,
+  ChevronRight,
+  X
 } from "lucide-react";
 import type { projects } from "@/lib/data";
 import { motion } from "framer-motion";
@@ -24,6 +27,7 @@ import { useEnquiryStore } from "@/hooks/use-enquiry-store";
 import { useCPPartnerStore } from "@/hooks/use-c-p-partner-store";
 import { Separator } from "@/components/ui/separator";
 import { PopupCPPartner } from "@/components/landing/PopupCPPartner";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import {
   FaSwimmingPool,
   FaDumbbell,
@@ -76,8 +80,53 @@ interface ProjectDetailsProps {
 export function ProjectDetails({ project }: ProjectDetailsProps) {
   const { open: openEnquiryPopup } = useEnquiryStore();
   const { open: openCPPartnerPopup } = useCPPartnerStore();
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const reraInfo = project.reraNo && project.reraNo !== "Not Mentioned" ? project.reraNo : null;
+
+  const openImageModal = (index: number) => {
+    setSelectedImageIndex(index);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImageIndex(null);
+  };
+
+  const navigateImage = (direction: 'prev' | 'next') => {
+    if (selectedImageIndex === null) return;
+    const totalImages = project.gallery.length;
+    if (direction === 'prev') {
+      setSelectedImageIndex((selectedImageIndex - 1 + totalImages) % totalImages);
+    } else {
+      setSelectedImageIndex((selectedImageIndex + 1) % totalImages);
+    }
+  };
+
+  // Keyboard navigation for image viewer
+  useEffect(() => {
+    if (selectedImageIndex === null) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setSelectedImageIndex(null);
+      } else if (e.key === 'ArrowLeft') {
+        setSelectedImageIndex((prev) => {
+          if (prev === null) return null;
+          const totalImages = project.gallery.length;
+          return (prev - 1 + totalImages) % totalImages;
+        });
+      } else if (e.key === 'ArrowRight') {
+        setSelectedImageIndex((prev) => {
+          if (prev === null) return null;
+          const totalImages = project.gallery.length;
+          return (prev + 1) % totalImages;
+        });
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImageIndex, project.gallery.length]);
 
   return (
     <>
@@ -201,7 +250,11 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                   <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Gallery</h2>
                   <div className="mt-5 md:mt-6 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                       {project.gallery.map((image, index) => (
-                          <div key={index} className="aspect-[4/3] relative overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105">
+                          <div 
+                              key={index} 
+                              className="aspect-[4/3] relative overflow-hidden rounded-lg shadow-md transition-transform hover:scale-105 cursor-pointer"
+                              onClick={() => openImageModal(index)}
+                          >
                                <Image
                                   src={image.src}
                                   alt={image.alt}
@@ -213,6 +266,65 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                       ))}
                   </div>
               </section>
+
+              {/* Image Viewer Modal */}
+              {selectedImageIndex !== null && (
+                <Dialog open={selectedImageIndex !== null} onOpenChange={(open) => !open && setSelectedImageIndex(null)}>
+                  <DialogContent className="max-w-7xl w-full h-full md:h-[90vh] p-0 bg-black/95 border-none">
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      {/* Close Button */}
+                      <button
+                        onClick={closeImageModal}
+                        className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                        aria-label="Close"
+                      >
+                        <X className="h-6 w-6" />
+                      </button>
+
+                      {/* Previous Button */}
+                      {project.gallery.length > 1 && (
+                        <button
+                          onClick={() => navigateImage('prev')}
+                          className="absolute left-4 z-50 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                          aria-label="Previous image"
+                        >
+                          <ChevronLeft className="h-8 w-8" />
+                        </button>
+                      )}
+
+                      {/* Image */}
+                      <div className="relative w-full h-full flex items-center justify-center p-4 md:p-8">
+                        <Image
+                          src={project.gallery[selectedImageIndex].src}
+                          alt={project.gallery[selectedImageIndex].alt}
+                          width={1920}
+                          height={1080}
+                          className="max-w-full max-h-full object-contain"
+                          priority
+                        />
+                      </div>
+
+                      {/* Next Button */}
+                      {project.gallery.length > 1 && (
+                        <button
+                          onClick={() => navigateImage('next')}
+                          className="absolute right-4 z-50 p-2 rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                          aria-label="Next image"
+                        >
+                          <ChevronRight className="h-8 w-8" />
+                        </button>
+                      )}
+
+                      {/* Image Counter */}
+                      {project.gallery.length > 1 && (
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-black/50 text-white text-sm">
+                          {selectedImageIndex + 1} / {project.gallery.length}
+                        </div>
+                      )}
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              )}
               
               {/* 7. Location & Contact Section */}
               <section id="location">
